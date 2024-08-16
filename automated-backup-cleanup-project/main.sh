@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #Directories to backup (load it from a text-file)
-BACKUP_DIR_FILE="/Users/satyamgoel/backupdir.txt"
+BACKUP_DIR_FILE="/path/backupdir.txt"
 
 #This will contain the periodic logs of our process
-LOG_FILE="/Users/satyamgoel/test-area/backup/logfile.txt"
+LOG_FILE="/path/test-area/backup/logfile.txt"
 
 if [[ -f "$BACKUP_DIR_FILE" ]]; then
 	mapfile -t BACKUP_DIRS < <(cat "$BACKUP_DIR_FILE")
@@ -13,7 +13,7 @@ else
 fi
 
 #Destination, where the backups will be stored
-BACKUP_DEST="/Users/satyamgoel/test-area/backup/"
+BACKUP_DEST="/path/test-area/backup/"
 
 #How long a backup should last
 RETENTION_DAYS=7
